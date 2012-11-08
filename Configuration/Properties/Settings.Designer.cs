@@ -34,5 +34,29 @@ namespace Configuration.Properties {
                 this["TransportMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("commands")]
+        public string ChannelName_Commands {
+            get {
+                return ((string)(this["ChannelName_Commands"]));
+            }
+            set {
+                this["ChannelName_Commands"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("status")]
+        public string ChannelName_Status {
+            get {
+                return ((string)(this["ChannelName_Status"]));
+            }
+            set {
+                this["ChannelName_Status"] = value;
+            }
+        }
     }
 }

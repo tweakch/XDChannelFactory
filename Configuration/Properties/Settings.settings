@@ -5,5 +5,11 @@
     <Setting Name="TransportMode" Type="TheCodeKing.Net.Messaging.XDTransportMode" Scope="User">
       <Value Profile="(Default)">IOStream</Value>
     </Setting>
+    <Setting Name="ChannelName_Commands" Type="System.String" Scope="User">
+      <Value Profile="(Default)">commands</Value>
+    </Setting>
+    <Setting Name="ChannelName_Status" Type="System.String" Scope="User">
+      <Value Profile="(Default)">status</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

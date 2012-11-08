@@ -1,27 +1,34 @@
 ﻿using System;
 using System.Threading;
+using Configuration;
 using TheCodeKing.Net.Messaging;
 using Configuration.Properties;
-using Configuration;
 
 namespace Listener
 {
     public class Listener
     {
+        private IXDBroadcast broadcast;
+
+        private IXDListener listener;
+
         public Listener()
         {
         }
-        
-        IXDListener listener;
-        IXDBroadcast broadcast;
 
         public bool ShutdownRequested { get; set; }
+
         public void Start()
         {
-            Console.WriteLine("Register Channel 'commands'");
-            var channel = XDChannelFactory.GetLocalChannel("commands");
-            broadcast = channel.CreateBroadcast(); 
+            Console.WriteLine(string.Format("Register Channel '{0}'",Settings.Default.ChannelName_Commands));
+            var channel = XDChannelFactory.GetLocalChannel(Settings.Default.ChannelName_Commands);
+            broadcast = channel.CreateBroadcast();
             listener = channel.CreateListener(MessageReceived);
+        }
+
+        internal void Close()
+        {
+            broadcast.SendToChannel(Settings.Default.ChannelName_Status, "closing");
         }
 
         private void MessageReceived(object sender, XDMessageEventArgs e)
@@ -33,11 +40,6 @@ namespace Listener
                     ShutdownRequested = true;
                     break;
             }
-        }
-
-        internal void Close()
-        {
-            broadcast.SendToChannel("status", "closing");
         }
     }
 

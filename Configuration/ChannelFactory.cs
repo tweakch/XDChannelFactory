@@ -5,15 +5,15 @@ namespace Configuration
 {
     public interface IXDChannel
     {
-        IXDBroadcast CreateBroadcast();
-
-        IXDListener CreateListener(XDListener.XDMessageHandler handler);
-
         XDTransportMode Mode { get; }
 
         string Name { get; }
 
         bool Propagate { get; }
+
+        IXDBroadcast CreateBroadcast();
+
+        IXDListener CreateListener(XDListener.XDMessageHandler handler);
     }
 
     public class XDChannelFactory
@@ -43,19 +43,6 @@ namespace Configuration
             Propagate = propagatesNetwork;
         }
 
-        public IXDBroadcast CreateBroadcast()
-        {
-            return XDBroadcast.CreateBroadcast(Mode, Propagate);
-        }
-
-        public IXDListener CreateListener(XDListener.XDMessageHandler handler)
-        {
-            var listener = XDListener.CreateListener(Mode, !Propagate);
-            listener.RegisterChannel(Name);
-            listener.MessageReceived += handler;
-            return listener;   
-        }
-
         public XDTransportMode Mode
         {
             get;
@@ -67,10 +54,24 @@ namespace Configuration
             get;
             private set;
         }
+
         public bool Propagate
         {
             get;
             private set;
+        }
+
+        public IXDBroadcast CreateBroadcast()
+        {
+            return XDBroadcast.CreateBroadcast(Mode, Propagate);
+        }
+
+        public IXDListener CreateListener(XDListener.XDMessageHandler handler)
+        {
+            var listener = XDListener.CreateListener(Mode, !Propagate);
+            listener.RegisterChannel(Name);
+            listener.MessageReceived += handler;
+            return listener;   
         }
     }
 }
