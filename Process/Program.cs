@@ -4,15 +4,15 @@ using Configuration;
 using TheCodeKing.Net.Messaging;
 using Configuration.Properties;
 
-namespace Listener
+namespace Process
 {
-    public class Listener
+    public class SomeClass
     {
         private IXDBroadcast broadcast;
 
         private IXDListener listener;
 
-        public Listener()
+        public SomeClass()
         {
         }
 
@@ -49,17 +49,17 @@ namespace Listener
 
         private static void Main(string[] args)
         {
-            var listener = new Listener();
-            listener.Start();
+            var someProcess = new SomeClass();
+            someProcess.Start();
 
             Console.WriteLine("Waiting for shutdown signal");
 
-            while (!listener.ShutdownRequested)
+            while (!someProcess.ShutdownRequested)
             {
                 Thread.Sleep(1000);
             }
 
-            listener.Close();
+            someProcess.Close();
         }
     }
 }

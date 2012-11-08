@@ -11,5 +11,8 @@
     <Setting Name="ChannelName_Status" Type="System.String" Scope="User">
       <Value Profile="(Default)">status</Value>
     </Setting>
+    <Setting Name="FilePath_SampleProcess" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\aklee\Documents\Visual Studio 2010\Projects\CAT\code\StruktoManager\StruktoManager3\Prototype\XDChannelFactory\Process\bin\Debug\Process.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

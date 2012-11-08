@@ -8,8 +8,8 @@
     <ProjectGuid>{AC6C8902-15D5-4C6C-AED2-1A732F4277C4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StruktoManager3</RootNamespace>
-    <AssemblyName>StruktoManager3</AssemblyName>
+    <RootNamespace>ChannelFactory</RootNamespace>
+    <AssemblyName>ChannelFactory</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="XDChannelFactory.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

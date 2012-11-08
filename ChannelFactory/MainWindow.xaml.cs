@@ -5,7 +5,7 @@ using Microsoft.Windows.Controls.Ribbon;
 using TheCodeKing.Net.Messaging;
 using Configuration.Properties;
 
-namespace StruktoManager3
+namespace ChannelFactory
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -26,8 +26,7 @@ namespace StruktoManager3
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            var filename = @"C:\Users\aklee\Documents\Visual Studio 2010\Projects\CAT\code\StruktoManager\StruktoManager3\Prototype\StruktoManager3Solution\Listener\bin\Debug\Listener.exe";
-            Process.Start(filename);
+            Process.Start(Settings.Default.FilePath_SampleProcess);
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)

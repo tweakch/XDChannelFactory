@@ -8,8 +8,8 @@
     <ProjectGuid>{BF1C40E9-C57D-4856-A422-347378DB3550}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Listener</RootNamespace>
-    <AssemblyName>Listener</AssemblyName>
+    <RootNamespace>Process</RootNamespace>
+    <AssemblyName>Process</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -56,6 +56,10 @@
     <ProjectReference Include="..\Configuration\Configuration.csproj">
       <Project>{CF2250B0-0387-4D64-8892-88AE49A775D5}</Project>
       <Name>Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChannelFactory\ChannelFactory.csproj">
+      <Project>{AC6C8902-15D5-4C6C-AED2-1A732F4277C4}</Project>
+      <Name>ChannelFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

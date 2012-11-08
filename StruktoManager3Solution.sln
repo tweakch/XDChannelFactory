@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StruktoManager3", "StruktoManager3\StruktoManager3.csproj", "{AC6C8902-15D5-4C6C-AED2-1A732F4277C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChannelFactory", "ChannelFactory\ChannelFactory.csproj", "{AC6C8902-15D5-4C6C-AED2-1A732F4277C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listener", "Listener\Listener.csproj", "{BF1C40E9-C57D-4856-A422-347378DB3550}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Process", "Process\Process.csproj", "{BF1C40E9-C57D-4856-A422-347378DB3550}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration\Configuration.csproj", "{CF2250B0-0387-4D64-8892-88AE49A775D5}"
 EndProject

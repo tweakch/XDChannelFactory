@@ -58,5 +58,18 @@ namespace Configuration.Properties {
                 this["ChannelName_Status"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\aklee\\Documents\\Visual Studio 2010\\Projects\\CAT\\code\\StruktoManager\\Stru" +
+            "ktoManager3\\Prototype\\XDChannelFactory\\Process\\bin\\Debug\\Process.exe")]
+        public string FilePath_SampleProcess {
+            get {
+                return ((string)(this["FilePath_SampleProcess"]));
+            }
+            set {
+                this["FilePath_SampleProcess"] = value;
+            }
+        }
     }
 }
