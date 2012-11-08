@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics;
 using System.Windows;
 using Configuration;
+using Configuration.Properties;
 using Microsoft.Windows.Controls.Ribbon;
 using TheCodeKing.Net.Messaging;
-using Configuration.Properties;
 
 namespace ChannelFactory
 {
@@ -24,19 +24,24 @@ namespace ChannelFactory
             listener = channel.CreateListener(listener_MessageReceived);
         }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void ButtonSend_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(Settings.Default.FilePath_SampleProcess);
+            broadcast.SendToChannel(Settings.Default.ChannelName_Commands, "hello");
         }
 
-        private void Button2_Click(object sender, RoutedEventArgs e)
+        private void ButtonShutdown_Click(object sender, RoutedEventArgs e)
         {
             broadcast.SendToChannel(Settings.Default.ChannelName_Commands, "shutdown");
         }
 
+        private void ButtonStart_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(Settings.Default.FilePath_SampleProcess);
+        }
+
         private void listener_MessageReceived(object sender, XDMessageEventArgs e)
         {
-            MessageBox.Show("Listener closed");
+            MessageBox.Show(string.Format("Received a message on channel {0}: {1}",e.DataGram.Channel, e.DataGram.Message));
         }
     }
 }

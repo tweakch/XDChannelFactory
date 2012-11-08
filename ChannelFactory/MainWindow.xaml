@@ -4,7 +4,7 @@
         xmlns:ribbon="clr-namespace:Microsoft.Windows.Controls.Ribbon;assembly=RibbonControlsLibrary"
         Title="MainWindow"
 		x:Name="RibbonWindow"
-		Width="640" Height="320">
+		Width="373" Height="320">
 
 	<Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
@@ -24,17 +24,20 @@
                               Header="Home">
                 <ribbon:RibbonGroup x:Name="Group1" 
                                     Header="Group1">
-                    <ribbon:RibbonButton x:Name="Button1"
+                    <ribbon:RibbonButton x:Name="ButtonStart"
                                          LargeImageSource="Images\LargeIcon.png"
-                                         Label="Start Process" Click="Button1_Click" />
+                                         Label="Start Process" Click="ButtonStart_Click" />
 
-                    <ribbon:RibbonButton x:Name="Button2"
+                    <ribbon:RibbonButton x:Name="ButtonSendCommand"
                                          SmallImageSource="Images\SmallIcon.png"
-                                         Label="Send shutdown signal" Click="Button2_Click" />
+                                         Label="Send some command" Click="ButtonSend_Click" />
+                    <ribbon:RibbonButton x:Name="ButtonShutdown"
+                                         SmallImageSource="Images\SmallIcon.png"
+                                         Label="Send shutdown signal" Click="ButtonShutdown_Click" />
                 </ribbon:RibbonGroup>
                 
             </ribbon:RibbonTab>
-        </ribbon:Ribbon> 
-        
+        </ribbon:Ribbon>
+        <ListBox Grid.Row="1" Name="listBox1" />
     </Grid>
 </ribbon:RibbonWindow>
