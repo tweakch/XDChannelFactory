@@ -41,6 +41,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TweakToolkit.IPC">
+      <HintPath>..\..\..\..\..\..\..\Tweak\TweakToolkit\TweakToolkit\TweakToolkit.IPC\bin\Debug\TweakToolkit.IPC.dll</HintPath>
+    </Reference>
     <Reference Include="XDMessaging">
       <HintPath>..\packages\XDMessaging.3.0\lib\net35-Client\XDMessaging.dll</HintPath>
     </Reference>

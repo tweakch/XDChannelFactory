@@ -4,6 +4,7 @@ using Configuration;
 using Configuration.Properties;
 using Microsoft.Windows.Controls.Ribbon;
 using TheCodeKing.Net.Messaging;
+using TweakToolkit.IPC;
 
 namespace ChannelFactory
 {
@@ -19,7 +20,7 @@ namespace ChannelFactory
         {
             InitializeComponent();
 
-            var channel = XDChannelFactory.GetLocalChannel(Settings.Default.ChannelName_Status);
+            var channel = XDChannelFactory.GetLocalChannel(Settings.Default.ChannelName_Status, Settings.Default.TransportMode);
             broadcast = channel.CreateBroadcast();
             listener = channel.CreateListener(listener_MessageReceived);
         }

@@ -3,6 +3,7 @@ using System.Threading;
 using Configuration;
 using Configuration.Properties;
 using TheCodeKing.Net.Messaging;
+using TweakToolkit.IPC;
 
 namespace Process
 {
@@ -37,7 +38,7 @@ namespace Process
         public void Start()
         {
             Console.WriteLine(string.Format("Register Channel '{0}'", Settings.Default.ChannelName_Commands));
-            var channel = XDChannelFactory.GetLocalChannel(Settings.Default.ChannelName_Commands);
+            var channel = XDChannelFactory.GetLocalChannel(Settings.Default.ChannelName_Commands, Settings.Default.TransportMode);
             broadcast = channel.CreateBroadcast();
             listener = channel.CreateListener(MessageReceived);
             broadcast.SendToChannel(Settings.Default.ChannelName_Status, "Process started!");
